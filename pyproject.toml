@@ -1,5 +1,5 @@
 [tool.poetry]
-name = "SkyproTODOLIST"
+name = "skyproTODOLIST"
 version = "0.1.0"
 description = ""
 authors = ["Oskar Agzigitov <oskar.agzigitov@yandex.ru>"]
@@ -9,9 +9,50 @@ packages = [{include = "SkyproTODOLIST"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 django = "^4.1.7"
+envparse = "^0.2.0"
 psycopg2-binary = "^2.9.5"
+gunicorn = "^20.1.0"
+env = "^0.1.0"
+poetry="^1.4.1"
+pendulum = "^2.1.2"
 
+[tool.poetry.group.dev.dependencies]
+pre-commit = "^3.1.1"
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+
+[tool.isort]
+multi_line_output = 3
+include_trailing_comma = true
+use_parentheses = true
+line_length = 120
+skip_glob = [
+    '**/migrations/**',
+    '.git',
+    '.github',
+    '.venv',
+    'deploy',
+]
+combine_as_imports = true
+combine_star = true
+know_first_party = 'todolist'
+
+[tool.black]
+line-length = 120
+target-version = ['py310']
+skip-string-normalization = true
+skip-magic-trailing-comma = true
+exclude = '''
+(
+  /(
+      \.git
+    | \.github
+    | \.venv
+    | \.pytest_cache
+    | deploy
+  )/
+)
+'''
