@@ -13,7 +13,7 @@
 установить зависимости выполнив следующую команду в терминале: pip install -r requirements.txt
 заполнить .env
 накатить миграции выполнив следующую команду в терминале:
-    python3 manage.py makemigrations
+    python manage.py makemigrations,
     python manage.py migrate
 
 запустить проект - ./manage.py runserver
