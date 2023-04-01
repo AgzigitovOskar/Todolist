@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   db:
-    image: postgres:15.1-alpine
+    image: postgres:14.6-alpine
 #    image: postgres:12.4-alpine
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
@@ -14,7 +14,7 @@ services:
     volumes:
       - diploma_pg_data:/var/lib/postgresql/data
     healthcheck:
-      test: pg_isready -U ${POSTGRES_USER} - d ${POSTGRES_DB}
+      test: pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}
       timeout: 3s
       retries: 10
       interval: 3s
@@ -37,6 +37,11 @@ services:
     build: .
     env_file: .env
     entrypoint: ''
+    depends_on:
+      api:
+        condition: service_started
+      db:
+        condition: service_healthy
     volumes:
       - django_static:/opt/static/
     command: python manage.py collectstatic -c --no-input
