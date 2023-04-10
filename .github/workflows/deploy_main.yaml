@@ -39,7 +39,8 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           source: "deploy/*"
-          target: "SkyproTODOLIST"
+#          target: "SkyproTODOLIST"
+          target: "diploma_11"
           scrip_components: 1
       - name: Run compose
         uses: appleboy/ssh-action@master
