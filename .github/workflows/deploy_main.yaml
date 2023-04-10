@@ -1,10 +1,6 @@
 name: Build and Deploy
 
 on: [push]
-#on:
-#  push:
-#    branches:
-#      - main
 
 jobs:
   build:
@@ -40,7 +36,7 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           source: "deploy/*"
 #          target: "SkyproTODOLIST"
-          target: "diploma_11"
+          target: "skyprotodolist"
           scrip_components: 1
       - name: Run compose
         uses: appleboy/ssh-action@master
@@ -49,7 +45,7 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
           script: |
-            cd SkyproTODOLIST
+            cd skyprotodolist
             docker compose pull
             docker compose up -d
       - name: Cleanup

@@ -4,7 +4,6 @@ services:
 
   db:
     image: postgres:14.6
-#    image: postgres:12.4-alpine
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_DB: ${POSTGRES_DB}
