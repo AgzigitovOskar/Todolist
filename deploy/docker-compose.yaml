@@ -29,7 +29,7 @@ services:
     entrypoint: ''
     volumes:
       - django_static:/opt/static/
-    command: python3 manage.py collectstatic -c --no-input
+    command: python3 manage.py collect-static -c --no-input
 
   frontend:
     image: sermalenk/skypro-front:lesson-34
