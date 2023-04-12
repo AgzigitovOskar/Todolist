@@ -22,5 +22,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/sSkyproTODOLIST:{{ env.BRANCH_NAME }}
-#          tags: ${{ secrets.DOCKERHUB_USERNAME }}/skyprotodolist:{{ env.BRANCH_NAME }}
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/skyprotodolist:{{ env.BRANCH_NAME }}
