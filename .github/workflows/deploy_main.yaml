@@ -1,9 +1,10 @@
 name: Build and Deploy
-on: push
+#on: push
 
-#on:
-#  push:
-#    branches-ignore:
+on:
+  push:
+    branches-ignore:
+      - master
 #      - main
 
 jobs:
@@ -50,11 +51,10 @@ jobs:
 #          script: cd SkyproTODOLIST && docker-compose pull api && docker-compose up -d
           script: |
             cd SkyproTODOLIST
-            docker compose pull
-            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker compose up -d
-
 #            docker compose pull
 #            docker compose up -d
+#            docker compose pull
+            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker compose up -d
 #      - name: Cleanup
 #        if: always()
 #        uses: appleboy/ssh-action@master
