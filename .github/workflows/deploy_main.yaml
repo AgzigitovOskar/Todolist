@@ -5,6 +5,7 @@ on:
   push:
     branches-ignore:
       - master
+      - dev_34
 #      - main
 
 jobs:
@@ -48,11 +49,11 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: cd SkyproTODOLIST && docker compose pull api && docker compose up -d
-#          script: |
-#            cd SkyproTODOLIST
-#            docker compose pull
-#            docker compose up -d
+#          script: cd SkyproTODOLIST && docker compose pull api && docker compose up -d
+          script: |
+            cd SkyproTODOLIST
+            docker compose pull
+            docker compose up -d
 #            docker compose pull
 #            echo ${{ secrets.SSH_PASSWORD }} | sudo -S docker compose up -d
 #      - name: Cleanup
