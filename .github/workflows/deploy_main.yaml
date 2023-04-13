@@ -1,9 +1,9 @@
 name: Build and Deploy
-#on: push
-on:
-  push:
-    branches-ignore:
-      - main
+on: push
+#on:
+#  push:
+#    branches-ignore:
+#      - main
 
 jobs:
   build:
@@ -39,18 +39,18 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           source: "deploy/*"
           target: "SkyproTODOLIST"
-          scrip_components: 1
+          strip_components: 1
       - name: Run compose
         uses: appleboy/ssh-action@master
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           password: ${{ secrets.SSH_PASSWORD }}
-          script: |
-#            sudo su
-            cd SkyproTODOLIST
-            docker compose pull
-            docker compose up -d
+          script: cd SkyproTODOLIST && docker-compose pull api && docker-compose up -d
+#          script: |
+#            cd SkyproTODOLIST
+#            docker-compose pull
+#            docker-compose up -d
 #      - name: Cleanup
 #        if: always()
 #        uses: appleboy/ssh-action@master
