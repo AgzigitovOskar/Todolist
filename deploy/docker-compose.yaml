@@ -17,19 +17,19 @@ services:
       interval: 3s
 
   api:
-    image: agzigitovoskar/skyprotodolist:latest
+    image: oscaragzigitov/skyprotodolist:latest
     env_file: .env
     depends_on:
       db:
         condition: service_healthy
 
   collect_static:
-    image: agzigitovoskar/skyprotodolist:latest
+    image: oscaragzigitov/skyprotodolist:latest
     env_file: .env
     entrypoint: ''
     volumes:
       - django_static:/opt/static/
-    command: python3 manage.py collect-static -c --no-input
+    command: python3 manage.py collectstatic -c --no-input
 
   frontend:
     image: sermalenk/skypro-front:lesson-34
