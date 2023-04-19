@@ -7,13 +7,14 @@
 стек
 *     Python 3.10,
 *     Django 4.1.7,
+*     DRF
 *     Postgres.
 
 Как запустить:
-установить зависимости выполнив следующую команду в терминале: pip install -r requirements.txt
-заполнить .env
-накатить миграции выполнив следующую команду в терминале:
-    python manage.py makemigrations,
-    python manage.py migrate
+python3 -m venv venv
+source venv/bin/activate
+pip install poetry
+poetry install
+pytest
 
 запустить проект - ./manage.py runserver
