@@ -20,11 +20,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Third party apps
+
     'rest_framework',
     'django_filters',
     'social_django',
-    # First party apps
     'todolist.core',
     'todolist.goals',
 ]
@@ -132,4 +131,6 @@ SOCIAL_AUTH_VK_EXTRA_DATA = [('email', 'email')]
 SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/logged-in/'
 SOCIAL_AUTH_USER_MODEL = 'core.User'
 
-REST_FRAMEWORK = {'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'}
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
+}

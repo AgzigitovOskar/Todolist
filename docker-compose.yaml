@@ -4,7 +4,6 @@ services:
 
   db:
     image: postgres:14.6-alpine
-#    image: postgres:12.4-alpine
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_DB: ${POSTGRES_DB}
@@ -29,7 +28,7 @@ services:
         condition: service_healthy
     ports:
       - "8000:8000"
-    command: python manage.py runserver 0.0.0.0:8000
+    command: python3 manage.py runserver 0.0.0.0:8000
     volumes:
       - ./todolist:/opt/todolist/
 
@@ -44,7 +43,7 @@ services:
         condition: service_healthy
     volumes:
       - django_static:/opt/static/
-    command: python manage.py collectstatic -c --no-input
+    command: python3 manage.py collectstatic -c --no-input
 
   frontend:
     image: sermalenk/skypro-front:lesson-36
