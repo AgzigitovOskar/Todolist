@@ -1,5 +1,17 @@
 name: Build and Deploy
-on: push
+#on: push
+
+#on:
+#  push:
+#    branches:
+#      - main
+#      - master
+#      - dev_36
+
+on:
+  push:
+    branches-ignore:
+      - main
 
 jobs:
   build:
