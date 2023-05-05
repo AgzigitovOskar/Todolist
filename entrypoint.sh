@@ -5,5 +5,3 @@ if [[ $status != 0 ]]; then
   python3 manage.py migrate
 fi
 exec "$@"
-
-
