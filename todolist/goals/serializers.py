@@ -38,9 +38,6 @@ class GoalCreateSerializer(serializers.ModelSerializer):
             raise PermissionDenied
         return value
 
-    # def validate_due_date(self, value: date):
-    #
-
 
 class GoalSerializer(serializers.ModelSerializer):
     user = ProfileSerializer(read_only=True)
