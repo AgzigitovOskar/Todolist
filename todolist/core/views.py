@@ -34,12 +34,6 @@ class ProfileView(generics.RetrieveUpdateDestroyAPIView):
     def delete(self, request: Request, *args, **kwargs) -> JsonResponse:
         logout(request)
         return JsonResponse({'message': 'Logout successfully complete'}, safe=False, status=status.HTTP_204_NO_CONTENT)
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/main
-    # def perform_destroy(self, instance):
-    #     logout(self.request)
 
 
 class UpdatePasswordView(generics.UpdateAPIView):
