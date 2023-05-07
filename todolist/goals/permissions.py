@@ -76,3 +76,4 @@ class GoalPermissions(IsAuthenticated):
 #             _filters['role__in'] = [BoardParticipant.Role.owner, BoardParticipant.Role.writer]
 #
 #         return BoardParticipant.objects.filter(**_filters).exists()
+
