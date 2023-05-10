@@ -48,6 +48,7 @@ jobs:
           source: "deploy/*"
           target: "SkyproTODOLIST"
           strip_components: 1
+
       - name: Run compose
         uses: appleboy/ssh-action@master
         with:

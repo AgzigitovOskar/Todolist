@@ -20,7 +20,7 @@ class TgClient:
     def token(self) -> str:
         return self.__token
 
-    def get_updates(self, offset: int = 0, timeout: int=60) -> GetUpdatesResponse:
+    def get_updates(self, offset: int = 0, timeout: int = 60) -> GetUpdatesResponse:
         data = self._get(Command.GET_UPDATES, offset=offset, timeout=timeout)
         return GetUpdatesResponse(**data)
 
