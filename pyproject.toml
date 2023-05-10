@@ -18,6 +18,10 @@ django-filter = "^23.1"
 pytest-django = "^4.5.2"
 django-extensions = "^3.2.1"
 ansible-vault-win = "^1.0.0"
+pydantic = "^1.10.7"
+requests = "^2.30.0"
+random2 = "^1.0.1"
+update = "^0.0.1"
 
 
 
