@@ -685,17 +685,6 @@ files = [
 ]
 
 [[package]]
-name = "random2"
-version = "1.0.1"
-description = "Python 3 compatible Pytohn 2 `random` Module."
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "random2-1.0.1.zip", hash = "sha256:34ad30aac341039872401595df9ab2c9dc36d0b7c077db1cea9ade430ed1c007"},
-]
-
-[[package]]
 name = "requests"
 version = "2.30.0"
 description = "Python HTTP for Humans."
@@ -815,18 +804,6 @@ doc = ["sphinx"]
 test = ["pytest", "pytest-cov"]
 
 [[package]]
-name = "style"
-version = "1.1.0"
-description = "🌈 Terminal string styling"
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "style-1.1.0-py2.py3-none-any.whl", hash = "sha256:6485a4bcb84629341a5fd1587fe3ac4887daa4741f0c8a1d01b9c3c8a263afe7"},
-    {file = "style-1.1.0.tar.gz", hash = "sha256:8eb365fc15039b19b728bd4e6e85fb7daf24e7aeeec6a15a666f97484c564005"},
-]
-
-[[package]]
 name = "tomli"
 version = "2.0.1"
 description = "A lil' TOML parser"
@@ -863,20 +840,6 @@ files = [
 ]
 
 [[package]]
-name = "update"
-version = "0.0.1"
-description = ""
-category = "main"
-optional = false
-python-versions = "*"
-files = [
-    {file = "update-0.0.1-py2.py3-none-any.whl", hash = "sha256:a25522b4bf60e3e3c1a3ff3ca3a4f5a328ac4b8ff400fdc9614483147e313323"},
-]
-
-[package.dependencies]
-style = "1.1.0"
-
-[[package]]
 name = "urllib3"
 version = "2.0.2"
 description = "HTTP library with thread-safe connection pooling, file post, and more."
@@ -897,4 +860,4 @@ zstd = ["zstandard (>=0.18.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "4e26741b5a6c4cf93745befb54ec2b007b2b400259f60784bd063898b8cf230a"
+content-hash = "ea68b2503924d9838598c81d446ba15a365510daa93f33fd54886430529abbdc"
