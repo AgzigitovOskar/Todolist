@@ -27,7 +27,7 @@ INSTALLED_APPS = [
 
     'todolist.core',
     'todolist.goals',
-    # 'todolist.bot',
+    'todolist.bot',
 ]
 
 if DEBUG:
@@ -134,7 +134,7 @@ SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/logged-in/'
 SOCIAL_AUTH_USER_MODEL = 'core.User'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination'
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
 }
 
 BOT_TOKEN = env.str('BOT_TOKEN')

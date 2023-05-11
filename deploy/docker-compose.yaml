@@ -23,6 +23,17 @@ services:
       db:
         condition: service_healthy
 
+  bot:
+    image: oscaragzigitov/skyprotodolist:latest
+    env_file: .env
+    depends_on:
+      db:
+        condition: service_healthy
+#      api:
+#        condition: service_started
+    restart: always
+    command: python3 manage.py runbot
+
   collect_static:
     image: oscaragzigitov/skyprotodolist:latest
     env_file: .env

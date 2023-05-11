@@ -1,5 +1,4 @@
 import os
-import random
 from django.db import models
 
 from todolist.core.models import User
