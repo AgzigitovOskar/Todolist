@@ -1,6 +1,5 @@
 from django.conf import settings
 from django.core.management import BaseCommand
-
 from todolist.bot.models import TgUser
 from todolist.bot.tg.client import TgClient
 from todolist.bot.tg.schemas import Message
@@ -35,8 +34,8 @@ class Command(BaseCommand):
         self.tg_client.send_message(
             msg.chat.id,
             f'''Добро пожаловать в бот @Oskar_SkyproTODOLIST_Bot!\n
-    Для продолжения работы необходимо привязать
-    Ваш аккаунт на сайте aoragzigitov.ga''',
+        Для продолжения работы необходимо привязать
+        Ваш аккаунт на сайте aoragzigitov.ga''',
         )
         code = tg_user.set_verification_code()
         self.tg_client.send_message(tg_user.chat_id, f'верификационный код: {code}')
