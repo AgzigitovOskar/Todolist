@@ -12,7 +12,6 @@ class Command(str, Enum):
 
 
 class TgClient:
-
     def __init__(self, token: str):
         self.__token = token
 

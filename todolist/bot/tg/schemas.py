@@ -1,14 +1,15 @@
 from pydantic.main import BaseModel
-from typing import List
 
 
 class Chat(BaseModel):
     id: int
+    first_name: str | None = None
+    username: str | None
 
 
 class Message(BaseModel):
     chat: Chat
-    text: str or None = None
+    text: str | None = None
 
 
 class UpdateObj(BaseModel):
@@ -23,4 +24,33 @@ class SendMessageResponse(BaseModel):
 
 class GetUpdatesResponse(BaseModel):
     ok: bool
-    result: List[UpdateObj]
+    result: list[UpdateObj]
+
+# from pydantic.main import BaseModel
+# from typing import List
+#
+#
+# class Chat(BaseModel):
+#     id: int
+#     first_name: str | None = None
+#     username: str | None
+#
+#
+# class Message(BaseModel):
+#     chat: Chat
+#     text: str or None = None
+#
+#
+# class UpdateObj(BaseModel):
+#     update_id: int
+#     message: Message
+#
+#
+# class SendMessageResponse(BaseModel):
+#     ok: bool
+#     result: Message
+#
+#
+# class GetUpdatesResponse(BaseModel):
+#     ok: bool
+#     result: List[UpdateObj]

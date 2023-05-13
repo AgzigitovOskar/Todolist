@@ -29,8 +29,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
-#      api:
-#        condition: service_started
+      api:
+        condition: service_started
     restart: always
     command: python3 manage.py runbot
 

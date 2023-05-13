@@ -11,7 +11,6 @@ cat_id = []
 
 
 class Command(BaseCommand):
-
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.tg_client = TgClient(settings.BOT_TOKEN)
@@ -23,7 +22,6 @@ class Command(BaseCommand):
             res = self.tg_client.get_updates(offset=offset)
             for item in res.result:
                 offset = item.update_id + 1
-
                 self.handle_message(item.message)
 
     def handle_message(self, msg: Message):
@@ -34,7 +32,12 @@ class Command(BaseCommand):
             self.handle_unauthorized(tg_user, msg)
 
     def handle_unauthorized(self, tg_user: TgUser, msg: Message):
-        self.tg_client.send_message(msg.chat.id, 'Подтвердите, пожалуйста, свой аккаунт')
+        self.tg_client.send_message(
+            msg.chat.id,
+            f'''Добро пожаловать в бот @Oskar_SkyproTODOLIST_Bot!\n
+    Для продолжения работы необходимо привязать
+    Ваш аккаунт на сайте aoragzigitov.ga''',
+        )
         code = tg_user.set_verification_code()
         self.tg_client.send_message(tg_user.chat_id, f'верификационный код: {code}')
 
@@ -53,19 +56,28 @@ class Command(BaseCommand):
         elif ('user' not in user_states['state']) and (msg.text not in allowed_commands):
             self.tg_client.send_message(tg_user.chat_id, 'Неизвестная команда')
 
-        elif (msg.text not in allowed_commands) and (user_states['state']['user']) and \
-                ('category' not in user_states['state']):
+        elif (
+            (msg.text not in allowed_commands)
+            and (user_states['state']['user'])
+            and ('category' not in user_states['state'])
+        ):
             category = self.handle_save_category(msg, tg_user)
             if category:
                 user_states['state']['category'] = category
                 self.tg_client.send_message(tg_user.chat_id, f'Выбрана категория {category}. Введите заголовок цели.')
 
-        elif (msg.text not in allowed_commands) and (user_states['state']['user']) and \
-                (user_states['state']['category']) and ('goal_title' not in user_states['state']):
+        elif (
+            (msg.text not in allowed_commands)
+            and (user_states['state']['user'])
+            and (user_states['state']['category'])
+            and ('goal_title' not in user_states['state'])
+        ):
             user_states['state']['goal_title'] = msg.text
-            goal = Goal.objects.create(title=user_states['state']['goal_title'],
-                                       user=user_states['state']['user'],
-                                       category=user_states['state']['category'])
+            goal = Goal.objects.create(
+                title=user_states['state']['goal_title'],
+                user=user_states['state']['user'],
+                category=user_states['state']['category'],
+            )
             self.tg_client.send_message(tg_user.chat_id, f'Цель {goal} создана в БД')
             del user_states['state']['user']
             del user_states['state']['msg_chat_id']
@@ -90,8 +102,7 @@ class Command(BaseCommand):
                 cat_text += f'{cat.id}: {cat.title} \n'
                 cat_id.append(cat.id)
             self.tg_client.send_message(
-                chat_id=tg_user.chat_id,
-                text=f'Выберите номер категории для новой цели:\n{cat_text}'
+                chat_id=tg_user.chat_id, text=f'Выберите номер категории для новой цели:\n{cat_text}'
             )
             if 'user' not in user_states['state']:
                 user_states['state']['user'] = tg_user.user
