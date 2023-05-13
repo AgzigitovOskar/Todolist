@@ -561,6 +561,7 @@ format-nongpl = ["fqdn", "idna", "isoduration", "jsonpointer (>1.13)", "rfc3339-
 
 [[package]]
 name = "nodeenv"
+
 version = "1.8.0"
 description = "Node.js virtual environment builder"
 category = "main"
@@ -606,6 +607,7 @@ files = [
 [[package]]
 name = "platformdirs"
 version = "3.5.1"
+
 description = "A small Python package for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
 category = "main"
 optional = false
@@ -1179,3 +1181,4 @@ test = ["covdefaults (>=2.3)", "coverage (>=7.2.3)", "coverage-enable-subprocess
 lock-version = "2.0"
 python-versions = "^3.10"
 content-hash = "3a9b85827e043a2ff672c04204ca720c902ecf9c831ee867f5d7abe7a10cb02d"
+
