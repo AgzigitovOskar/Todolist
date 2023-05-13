@@ -4,17 +4,18 @@ from pydantic.main import BaseModel
 class Chat(BaseModel):
     id: int
     first_name: str | None = None
-    username: str | None
+    username: str or None = None
 
 
 class Message(BaseModel):
     chat: Chat
-    text: str | None = None
+    text: str or None = None
 
 
 class UpdateObj(BaseModel):
     update_id: int
-    message: Message
+    message: Message or None = None
+    edited_message: Message or None = None
 
 
 class SendMessageResponse(BaseModel):
