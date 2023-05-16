@@ -34,3 +34,4 @@ class TgClient:
         if not response.ok:
             raise ValueError
         return response.json()
+
