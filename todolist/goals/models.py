@@ -53,6 +53,7 @@ class GoalCategory(BaseModel):
 
 
 class Goal(BaseModel):
+
     class Meta:
         verbose_name = 'Цель'
         verbose_name_plural = 'Цели'
@@ -84,6 +85,7 @@ class Goal(BaseModel):
 
 
 class GoalComment(BaseModel):
+
     class Meta:
         verbose_name = 'Комментарий'
         verbose_name_plural = 'Комментарии'

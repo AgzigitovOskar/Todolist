@@ -112,6 +112,7 @@ class GoalCreateSerializer(serializers.ModelSerializer):
         return category
 
 
+
 class GoalSerializer(serializers.ModelSerializer):
     user = ProfileSerializer(read_only=True)
 
