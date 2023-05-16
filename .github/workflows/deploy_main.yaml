@@ -1,12 +1,4 @@
 name: Build and Deploy
-#on: push
-
-#on:
-#  push:
-#    branches:
-#      - main
-#      - master
-#      - dev_36
 
 on:
   push:
@@ -48,6 +40,7 @@ jobs:
           source: "deploy/*"
           target: "SkyproTODOLIST"
           strip_components: 1
+
       - name: Run compose
         uses: appleboy/ssh-action@master
         with:
