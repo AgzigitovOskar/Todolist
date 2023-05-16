@@ -17,14 +17,21 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
 
 urlpatterns = [
     path('core/', include(('todolist.core.urls', 'todolist.core'))),
+    path('core/', include('todolist.core.urls')),
+
     path('goals/', include(('todolist.goals.urls', 'todolist.goals'))),
     path('bot/', include(('todolist.bot.urls', 'todolist.bot'))),
-
+    path('core/', include('todolist.core.urls')),
     path('admin/', admin.site.urls),
     path('oauth/', include('social_django.urls', namespace='social')),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/swagger-ui/',
+         SpectacularSwaggerView.as_view(url_name='schema'),
+         name='swagger-ui'),
 ]
 
 
