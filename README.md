@@ -33,9 +33,14 @@ ________________________________________________________________________________
 _________________________________________________________________________________________________________________________
 
 Как запустить:
-   - python3 -m venv venv
+   - python3 -m venv   
    - source venv/bin/activate
    - pip install poetry
    - poetry install
    - pytest
    - запустить проект - ./manage.py runserver
+
+./manage.py makemigrations
+./manage.py migrate
+./manage.py createsuperuser
+docker-compose up -d db 
