@@ -41,6 +41,9 @@ ________________________________________________________________________________
    - запустить проект - ./manage.py runserver
 
 ./manage.py makemigrations
+
 ./manage.py migrate
+
 ./manage.py createsuperuser
+
 docker-compose up -d db 
