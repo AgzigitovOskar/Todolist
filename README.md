@@ -51,3 +51,10 @@ docker-compose up -d db
 
 
 @Oskar_SkyproTODOLIST_Bot
+
+![Снимок экрана 2023-11-14 в 23 46 00](https://github.com/AgzigitovOskar/Todolist/assets/110802094/6796bb40-9ee1-45ab-bd4a-b31beec623d8)
+![Снимок экрана 2023-11-14 в 23 41 23](https://github.com/AgzigitovOskar/Todolist/assets/110802094/8e5bcae3-024b-48fc-b584-10cd321e327f)
+![Снимок экрана 2023-11-14 в 23 41 36](https://github.com/AgzigitovOskar/Todolist/assets/110802094/375042f6-7bb4-4b6a-864d-a0d516135277)
+![Снимок экрана 2023-11-14 в 23 41 41](https://github.com/AgzigitovOskar/Todolist/assets/110802094/87ab1bc7-cfe1-4358-81b6-5321c54c5a43)
+
+
