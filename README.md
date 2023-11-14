@@ -47,3 +47,7 @@ ________________________________________________________________________________
 ./manage.py createsuperuser
 
 docker-compose up -d db 
+
+
+
+@Oskar_SkyproTODOLIST_Bot
