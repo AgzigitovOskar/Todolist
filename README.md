@@ -37,16 +37,26 @@ ________________________________________________________________________________
    - source venv/bin/activate
    - pip install poetry
    - poetry install
+   - poetry update
+
+[//]: # (   - poetry add envparse &#40;либо обновить: poetry update package&#41;)
    - pytest
+   - text_env переименовать .env
+   - запустить: docker-compose up -d db 
+   - проверить что БД поднялась: docker ps
+     - создать суперюзера: ./manage.py createsuperuser
+           admin
+           admin
+
    - запустить проект - ./manage.py runserver
 
 ./manage.py makemigrations
 
 ./manage.py migrate
 
-./manage.py createsuperuser
 
-docker-compose up -d db 
+
+
 
 
 
